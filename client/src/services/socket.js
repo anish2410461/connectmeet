@@ -1,7 +1,7 @@
 import { io } from "socket.io-client";
 
 const socket = io(
-  `http://${window.location.hostname}:5000`,
+  import.meta.env.VITE_SOCKET_URL || `http://${window.location.hostname}:5000`,
   {
     autoConnect: false,
     transports: ["websocket"]
